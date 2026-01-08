@@ -42,7 +42,7 @@ const flags: Record<string, { name: string; flag: string; code: "uz" | "uz-cyr" 
         class="px-6 py-3 flex items-center border-2 rounded-2xl border-[#145CB8] gap-4 bg-transparent hover:bg-blue-50 transition-colors"
       >
         <Info class="text-[#145CB8]" />
-        <span class="text-[30px] text-[#145CB8]"> Биз ҳақимизда</span>
+        <span class="text-[30px] text-[#145CB8]"> {{ $t('aboutus') }}</span>
       </button>
 
       <div class="flex items-center gap-3">
@@ -67,7 +67,7 @@ const flags: Record<string, { name: string; flag: string; code: "uz" | "uz-cyr" 
             />
           </div>
 
-          <span class="font-semibold text-[30px]">{{ item.code }}</span>
+          <span class="font-semibold text-[30px]">{{ item.name }}</span>
         </button>
       </div>
     </div>
