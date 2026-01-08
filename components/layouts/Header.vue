@@ -15,7 +15,7 @@
       <img :src="Logo" alt="Logo" class="w-[279px] h-[369px] py-4" />
 
       <!-- Text -->
-      <p class="font-semibold text-[81px] leading-tight text-white">
+      <p class="font-semibold text-[70px] leading-tight text-white">
         “Ўзбекистон темир йўллари" АЖ Марказий поликлиникасининг пуллик тиббий
         хизматлари учун нархлар рўйхати
       </p>
