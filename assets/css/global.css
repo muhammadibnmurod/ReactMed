@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* here will be global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+    background-color: #fff;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.el-dialog {
+    @apply !my-10 !overflow-y-auto
+}

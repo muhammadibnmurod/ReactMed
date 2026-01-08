@@ -1,0 +1,25 @@
+{
+  "name": "ReactMed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/i18n": "^10.2.1",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "nuxt": "^3.20.2",
+    "nuxt-svgo": "^4.2.6",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "naive-ui": "^2.43.2",
+    "prettier": "3.7.4"
+  }
+}
