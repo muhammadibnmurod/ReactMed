@@ -4,10 +4,13 @@ import type { StaffMember } from '~/components/views/AboutUs/StaffMember'
 defineProps<{
     item: StaffMember
 }>()
+
+const showModal = ref(false);
 </script>
 
 <template>
-    <div class="flex flex-col items-center text-center justify-center">
+    <div @click="showModal = true"
+        class="flex flex-col min-h-[1300px] cursor-pointer shadow-2xl rounded-full items-center text-center justify-center">
 
         <div class="w-full aspect-[4/5] overflow-hidden rounded-t-[40px] border border-black/20">
             <img :src="item.image" :alt="item.fullName" class="w-full h-full object-cover object-top" />
@@ -22,4 +25,5 @@ defineProps<{
             </p>
         </div>
     </div>
+    <StaffModal :item="item" :show="showModal" @close="showModal = false" />
 </template>
