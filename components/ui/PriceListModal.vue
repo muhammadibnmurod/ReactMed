@@ -81,8 +81,10 @@ import { useI18n } from 'vue-i18n'
 import PriceListFilter from '~/components/ui/PriceListFilter.vue'
 import BackPage from '~/components/ui/BackPage.vue'
 import type { ServiceItem } from '~/components/views/priceList/Data'
+import { useAdvancedSearch } from '~/composable/useSearch'
 
 const { t } = useI18n()
+const { advancedSearch } = useAdvancedSearch()
 
 const props = defineProps<{
     show: boolean
@@ -100,12 +102,12 @@ const handleClose = (val: boolean) => {
 
 const filteredSubServices = computed(() => {
     if (!props.service) return []
-    if (!searchQuery.value) return props.service.subServices
+    if (!searchQuery.value.trim()) return props.service.subServices
 
-    const query = searchQuery.value.toLowerCase()
-    return props.service.subServices.filter(sub =>
-        t(sub.title).toLowerCase().includes(query)
-    )
+    return props.service.subServices.filter(sub => {
+        const translatedTitle = t(sub.title)
+        return advancedSearch(searchQuery.value, translatedTitle)
+    })
 })
 
 watch(() => props.show, val => {

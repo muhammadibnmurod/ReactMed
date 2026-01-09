@@ -11,5 +11,5 @@ definePageMeta({
     layout: 'price-list', 
 })
 
-const search = inject('searchTerm')
+const search = inject<string>('searchTerm', '')
 </script>
