@@ -53,5 +53,27 @@
       "radiation_oncologist": "Radiatsion onkolog"
     }
   },
-  "back": "Orqaga"
+  "back": "Orqaga",
+  "services": {
+    "service_1": "Qonning umumiy tahlili",
+    "service_2": "Siydik tahlili",
+    "service_3": "Jigar funksiyasi testi",
+    "service_4": "Lipid profili",
+    "service_5": "Buyrak funksiyasi testi",
+    "service_6": "Glyukoza chidamliligi testi",
+    "service_7": "Elektrolitlar tahlili",
+    "service_8": "Qalqonsimon bez funksiyasi testi",
+    "service_9": "Qon ivish testi",
+    "service_10": "Qon gazlari tahlili",
+    "service_11": "Mochevina kislota tahlili",
+    "service_12": "To‘liq qon hisoboti (CBC)",
+    "service_13": "Qon glyukoza testi",
+    "service_14": "Buyrak funktsiyasi testi",
+    "service_15": "Allergiya testi paneli",
+    "service_16": "Yurak sog‘lig‘i paneli",
+    "service_17": "Qon bosimi monitoringi",
+    "service_18": "Xolesterol darajasi testi",
+    "service_19": "Prostat-spetsifik antigen (PSA) testi",
+    "service_20": "Qon guruhi va Rh faktor testi"
+  }
 }

@@ -53,5 +53,27 @@
       "radiation_oncologist": "Radiation Oncologist"
     }
   },
-  "back": "Back"
+  "back": "Back",
+  "services": {
+    "service_1": "Comprehensive blood test",
+    "service_2": "Urinalysis",
+    "service_3": "Liver function test",
+    "service_4": "Kidney function test",
+    "service_5": "Lipid profile",
+    "service_6": "Thyroid function test",
+    "service_7": "Blood glucose test",
+    "service_8": "Complete blood count (CBC)",
+    "service_9": "Electrolyte panel",
+    "service_10": "C-reactive protein (CRP) test",
+    "service_11": "Hepatitis B surface antigen (HBsAg) test",
+    "service_12": "HIV antibody test",
+    "service_13": "COVID-19 PCR test",
+    "service_14": "Stool analysis for parasites",
+    "service_15": "Allergy testing panel",
+    "service_16": "Vitamin D level test",
+    "service_17": "Iron studies panel",
+    "service_18": "Prostate-specific antigen (PSA) test",
+    "service_19": "Pap smear test",
+    "service_20": "Blood culture and sensitivity test"
+  }
 }

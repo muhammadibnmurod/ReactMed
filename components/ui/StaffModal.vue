@@ -19,18 +19,18 @@ const handleUpdateShow = (value: boolean) => {
 
 <template>
     <n-modal :show="show" @update:show="handleUpdateShow" mask-closable>
-        <n-card class="w-[2450px] rounded-[60px] bg-[#E0EEFF]" :bordered="false" role="dialog" aria-modal="true">
+        <n-card class="w-[2800px] rounded-[60px] bg-[#E0EEFF]" :bordered="false" role="dialog" aria-modal="true">
             <div class="flex flex-col gap-[80px]">
 
                 <div class="px-[60px] pt-[40px] mb-10 h-full w-full ">
-                    <BackPage @click="emit('close')" />
+                    <BackPage mode="modal" @click="emit('close')" />
                 </div>
 
                 <div class="flex flex-col items-center justify-center text-center gap-[80px] px-[60px] pb-[60px]">
 
                     <div
-                        class="w-[800px] h-[760px] overflow-hidden flex justify-center items-start rounded-[50px] border border-[#A4CCFF] bg-[#E0EEFF] shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
-                        <img :src="item.image" class="w-full h-[820px] object-cover object-top" />
+                        class="w-[900px] h-[900px] overflow-hidden flex justify-center items-start rounded-[50px] border border-[#A4CCFF] bg-[#E0EEFF] shadow-[0_4px_16px_0_rgba(0,0,0,0.16)]">
+                        <img :src="item.image" class="w-full h-[1000px] object-cover object-top" />
                     </div>
 
 
@@ -44,7 +44,12 @@ const handleUpdateShow = (value: boolean) => {
                         </p>
 
                         <div class="text-[#222932]/70 font-['Inter'] text-[56px] font-normal leading-normal">
-                            5 yillik tajribaga ega mutahasis bo’lib, ular Yaponiya davlatida malaka ham oshirganlar, hozirgi kunda eng yutuk shifokor mutahasislardan biri, sizga aynan shu inson tashxis qo’yishi va to’liq davolanib chiqishinggiz uchun yordam beruvchi qahramonimiz bo’ladi 15 yillik tajribaga ega mutahasis bo’lib, ular Yaponiya davlatida malaka ham oshirganlar, hozirgi kunda eng yutuk shifokor mutahasislardan biri, sizga aynan shu inson tashxis qo’yishi va to’liq davolanib chiqishinggiz uchun yordam beruvchi qahramonimiz bo’ladi
+                            5 yillik tajribaga ega mutahasis bo’lib, ular Yaponiya davlatida malaka ham oshirganlar,
+                            hozirgi kunda eng yutuk shifokor mutahasislardan biri, sizga aynan shu inson tashxis
+                            qo’yishi va to’liq davolanib chiqishinggiz uchun yordam beruvchi qahramonimiz bo’ladi 15
+                            yillik tajribaga ega mutahasis bo’lib, ular Yaponiya davlatida malaka ham oshirganlar,
+                            hozirgi kunda eng yutuk shifokor mutahasislardan biri, sizga aynan shu inson tashxis
+                            qo’yishi va to’liq davolanib chiqishinggiz uchun yordam beruvchi qahramonimiz bo’ladi
                         </div>
                     </div>
 

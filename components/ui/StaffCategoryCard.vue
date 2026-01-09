@@ -6,10 +6,14 @@ defineProps<{
 }>()
 
 const showModal = ref(false);
+
+const emit = defineEmits<{
+    (e: 'click'): void
+}>()
 </script>
 
 <template>
-    <div @click="showModal = true"
+    <div @click="showModal = true ; emit('click')"
         class="flex flex-col min-h-[1300px] cursor-pointer shadow-2xl rounded-full items-center text-center justify-center">
 
         <div class="w-full aspect-[4/5] overflow-hidden rounded-t-[40px] border border-black/20">
