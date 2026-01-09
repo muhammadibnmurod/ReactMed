@@ -10,6 +10,12 @@ function changeLocale(code: "uz" | "uz-cyr" | "ru" | "en") {
   setLocale(code);
 }
 
+const router = useRouter();
+
+function backAboutUs() {
+  router.push({ name: "AboutUs" });
+}
+
 const flags: Record<string, { name: string; flag: string; code: "uz" | "uz-cyr" | "ru" | "en" }> = {
   uz: {
     name: "O'zbekcha",
@@ -42,7 +48,7 @@ const flags: Record<string, { name: string; flag: string; code: "uz" | "uz-cyr" 
         class="px-6 py-3 flex items-center border-2 rounded-2xl border-[#145CB8] gap-4 bg-transparent hover:bg-blue-50 transition-colors"
       >
         <Info class="text-[#145CB8]" />
-        <span class="text-[30px] text-[#145CB8]"> {{ $t('aboutus') }}</span>
+        <span @click="backAboutUs" class="text-[30px] text-[#145CB8]"> {{ $t('aboutus') }}</span>
       </button>
 
       <div class="flex items-center gap-3">

@@ -11,5 +11,47 @@
   "header": {
     "title": "List of prices for paid medical services of the Central Polyclinic of JSC \"Uzbekistan Railways\""
   },
-  "aboutus": "About Us"
+  "aboutus": "About Us",
+  "PriceFilter": {
+    "title": "Search for medical service tariff",
+    "placeholder": "Enter medical service tariff"
+  },
+  "categories": {
+    "virusology": "Virusologiya va virus kasalliklarini o‘rganish",
+    "virology": "Virusologiya va infeksion viruslar tahlili",
+    "biochemistry": "Biokimyoviy laboratoriya tadqiqotlari",
+    "bacteriology": "Bakteriologiya va bakterial infeksiyalar tahlili",
+    "clinic_diag": "Klinik laboratoriya diagnostikasi va tekshiruvlar",
+    "immunology": "Immunologiya va immun tizimini baholash",
+    "genetics": "Genetik tadqiqotlar va molekulyar tahlillar",
+    "microbiology": "Mikrobiologiya va mikroorganizmlarni aniqlash",
+    "hematology": "Gematologiya va qon tizimi tahlillari",
+    "parasitology": "Parazitologiya va parazitar kasalliklar diagnostikasi",
+    "toxicology": "Toksikologiya va zaharli moddalar tahlili",
+    "pathology": "Patologiya va to‘qimalardagi patologik o‘zgarishlar"
+  },
+  "staff": {
+    "title": "Our Staff",
+    "positions": {
+      "cardiologist": "Cardiologist",
+      "pediatrician": "Pediatrician",
+      "therapist": "Therapist",
+      "dentist": "Dentist",
+      "surgeon": "Surgeon",
+      "neurologist": "Neurologist",
+      "radiologist": "Radiologist",
+      "ophthalmologist": "Ophthalmologist",
+      "dermatologist": "Dermatologist",
+      "psychiatrist": "Psychiatrist",
+      "endocrinologist": "Endocrinologist",
+      "gastroenterologist": "Gastroenterologist",
+      "pulmonologist": "Pulmonologist",
+      "urologist": "Urologist",
+      "gynecologist": "Gynecologist",
+      "otolaryngologist": "Otolaryngologist",
+      "anesthesiologist": "Anesthesiologist",
+      "radiation_oncologist": "Radiation Oncologist"
+    }
+  },
+  "back": "Back"
 }

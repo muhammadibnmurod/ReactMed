@@ -15,7 +15,7 @@ defineProps<{
 
         <div class="bg-[#2F5FB3] px-6 h-[180px] flex items-center justify-center">
             <p class="text-white text-center text-[40px] font-semibold leading-tight">
-                {{ item.title }}
+                {{ $t(item.title) }}
             </p>
         </div>
     </div>

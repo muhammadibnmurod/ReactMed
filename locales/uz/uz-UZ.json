@@ -11,5 +11,47 @@
   "header": {
     "title": "O‘zbekiston temir yo‘llari AJ Markaziy poliklinikasining pullik tibbiy xizmatlari narxlari ro‘yxati"
   },
-  "aboutus": "Biz haqimizda"
+  "aboutus": "Biz haqimizda",
+  "PriceFilter": {
+    "title": "Tibbiy xizmat ko‘rsatish tarifini izlash",
+    "placeholder": "Tibbiy xizmat ko‘rsatish tarifini yozing"
+  },
+  "categories": {
+  "virusology": "Virusli kasalliklar serologiyasi va entomologiyasi",
+  "virology": "Virusologiya va infeksion viruslar tahlili",
+  "biochemistry": "Biokimyoviy laboratoriya tadqiqotlari",
+  "bacteriology": "Bakteriologiya va bakterial infeksiyalar tahlili",
+  "clinic_diag": "Klinik laboratoriya diagnostikasi va tekshiruvlar",
+  "immunology": "Immunologiya va immun tizimini baholash",
+  "genetics": "Genetik tadqiqotlar va molekulyar tahlillar",
+  "microbiology": "Mikrobiologiya va mikroorganizmlarni aniqlash",
+  "hematology": "Gematologiya va qon tizimi tahlillari",
+  "parasitology": "Parazitologiya va parazitar kasalliklar diagnostikasi",
+  "toxicology": "Toksikologiya va zaharli moddalar tahlili",
+  "pathology": "Patologiya va to‘qimalardagi patologik o‘zgarishlar"
+  },
+  "staff": {
+    "title": "Bizning xodimlar",
+    "positions": {
+      "cardiologist": "Kardiolog",
+      "pediatrician": "Pediatr",
+      "therapist": "Terapevt",
+      "dentist": "Stomatolog",
+      "surgeon": "Xirurg",
+      "neurologist": "Nevrolog",
+      "radiologist": "Radiolog",
+      "ophthalmologist": "Oftalmolog",
+      "dermatologist": "Dermatolog",
+      "psychiatrist": "Psixiatr",
+      "endocrinologist": "Endokrinolog",
+      "gastroenterologist": "Gastroenterolog",
+      "pulmonologist": "Pnevmonolog",
+      "urologist": "Urolog",
+      "gynecologist": "Ginekolog",
+      "otolaryngologist": "Otolaringolog",
+      "anesthesiologist": "Anesteziolog",
+      "radiation_oncologist": "Radiatsion onkolog"
+    }
+  },
+  "back": "Orqaga"
 }

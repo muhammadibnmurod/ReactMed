@@ -4,15 +4,15 @@
       class="text-center border w-full rounded-t-[50px] bg-[#C2DDFF] px-14 py-2 mx-auto shadow-2xl cursor-pointer ">
       <div class="items-center min-h-[150px] flex justify-center">
         <h2 class="text-[#145CB8] font-sans text-[56px] font-[700]">
-          Тиббий хизмат кўрсатиш тарифини излаш
+          {{ $t("PriceFilter.title") }}
         </h2>
       </div>
     </div>
     <div>
       <div
         class="border rounded-b-[50px] shadow-2xl h-auto bg-[#E0EEFF] px-40 py-[50px] items-center justify-center mx-auto mb-10 cursor-pointer">
-        <n-input placeholder="Тиббий хизмат кўрсатиш тарифини ёзинг" @update:value="emit('update:modelValue', $event)"
-          class="rounded-2xl bg-white !text-4xl !item-center py-10" size="large" :input-style="{
+        <n-input :placeholder="$t('PriceFilter.placeholder')" @update:value="emit('update:modelValue', $event)"
+          class=" rounded-3xl bg-white !text-4xl !item-center py-10" size="large" :input-style="{
             height: '100px',
             fontSize: '32px',
           }">
