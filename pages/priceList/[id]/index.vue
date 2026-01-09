@@ -1,15 +1,13 @@
 <template>
-    <div>
-        <ProductPriceListView :id="route.params.id" />
+    <div class="w-full">
+        <ProductPriceListView />
     </div>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
+import ProductPriceListView from '~/components/views/ProductPriceList/ProductPriceListView.vue'
 
 definePageMeta({
-    layout: 'price-list', // Xuddi shu layoutni ishlatamiz
+    layout: 'price-list',
 })
 </script>

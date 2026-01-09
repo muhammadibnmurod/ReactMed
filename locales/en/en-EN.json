@@ -75,5 +75,30 @@
     "service_18": "Prostate-specific antigen (PSA) test",
     "service_19": "Pap smear test",
     "service_20": "Blood culture and sensitivity test"
+  },
+  "sub_services": {
+    "item_1": "Complete blood count (CBC) with differential",
+    "item_2": "Basic metabolic panel (BMP)",
+    "item_3": "Comprehensive metabolic panel (CMP)",
+    "item_4": "Thyroid-stimulating hormone (TSH) test",
+    "item_5": "Hemoglobin A1c (HbA1c) test",
+    "item_6": "Erythrocyte sedimentation rate (ESR) test",
+    "item_7": "Hepatitis C antibody test",
+    "item_8": "Rapid influenza diagnostic test (RIDT)",
+    "item_9": "Clostridium difficile toxin test",
+    "item_10": "Serum creatinine test",
+    "item_11": "Blood urea nitrogen (BUN) test",
+    "item_12": "Lipid panel with LDL and HDL cholesterol",
+    "item_13": "Vitamin B12 and folate test",
+    "item_14": "Celiac disease antibody panel",
+    "item_15": "Rheumatoid factor (RF) test",
+    "item_16": "Antinuclear antibody (ANA) test",
+    "item_17": "D-dimer test",
+    "item_18": "Urine culture and sensitivity test",
+    "item_19": "Skin prick allergy test",
+    "item_20": "Serum ferritin test"
+  },
+  "common": {
+    "no_results": "No results found"
   }
 }

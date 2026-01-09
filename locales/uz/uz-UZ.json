@@ -17,18 +17,18 @@
     "placeholder": "Tibbiy xizmat ko‘rsatish tarifini yozing"
   },
   "categories": {
-  "virusology": "Virusli kasalliklar serologiyasi va entomologiyasi",
-  "virology": "Virusologiya va infeksion viruslar tahlili",
-  "biochemistry": "Biokimyoviy laboratoriya tadqiqotlari",
-  "bacteriology": "Bakteriologiya va bakterial infeksiyalar tahlili",
-  "clinic_diag": "Klinik laboratoriya diagnostikasi va tekshiruvlar",
-  "immunology": "Immunologiya va immun tizimini baholash",
-  "genetics": "Genetik tadqiqotlar va molekulyar tahlillar",
-  "microbiology": "Mikrobiologiya va mikroorganizmlarni aniqlash",
-  "hematology": "Gematologiya va qon tizimi tahlillari",
-  "parasitology": "Parazitologiya va parazitar kasalliklar diagnostikasi",
-  "toxicology": "Toksikologiya va zaharli moddalar tahlili",
-  "pathology": "Patologiya va to‘qimalardagi patologik o‘zgarishlar"
+    "virusology": "Virusli kasalliklar serologiyasi va entomologiyasi",
+    "virology": "Virusologiya va infeksion viruslar tahlili",
+    "biochemistry": "Biokimyoviy laboratoriya tadqiqotlari",
+    "bacteriology": "Bakteriologiya va bakterial infeksiyalar tahlili",
+    "clinic_diag": "Klinik laboratoriya diagnostikasi va tekshiruvlar",
+    "immunology": "Immunologiya va immun tizimini baholash",
+    "genetics": "Genetik tadqiqotlar va molekulyar tahlillar",
+    "microbiology": "Mikrobiologiya va mikroorganizmlarni aniqlash",
+    "hematology": "Gematologiya va qon tizimi tahlillari",
+    "parasitology": "Parazitologiya va parazitar kasalliklar diagnostikasi",
+    "toxicology": "Toksikologiya va zaharli moddalar tahlili",
+    "pathology": "Patologiya va to‘qimalardagi patologik o‘zgarishlar"
   },
   "staff": {
     "title": "Bizning xodimlar",
@@ -75,5 +75,31 @@
     "service_18": "Xolesterol darajasi testi",
     "service_19": "Prostat-spetsifik antigen (PSA) testi",
     "service_20": "Qon guruhi va Rh faktor testi"
+  },
+  "sub_services": {
+    "item_1": "Qonning umumiy tahlili (OAK)",
+    "item_2": "Biokimyoviy qon tahlili",
+    "item_3": "Nechiporenko bo‘yicha siydik tahlili",
+    "item_4": "Zimnitskiy bo‘yicha siydik tahlili",
+    "item_5": "Glikirovanniy gemoglobin (HbA1c) testi",
+    "item_6": "C-reaktiv oqsil (CRP) testi",
+    "item_7": "Revmatoyid faktor (RF) testi",
+    "item_8": "Antinuklear antitanalar (ANA) testi",
+    "item_9": "Troponinlar testi",
+    "item_10": "D-dimer testi",
+    "item_11": "Prothrombin vaqti (PV) testi",
+    "item_12": "Faollashtirilgan qisman tromboplastin vaqti (AChTV) testi",
+    "item_13": "Fibrinogen testi",
+    "item_14": "Umumiy oqsil testi",
+    "item_15": "Alanin aminotransferaza (ALT) testi",
+    "item_16": "Kreatinin testi",
+    "item_17": "Mochevina testi",
+    "item_18": "Bilirubin testi",
+    "item_19": "Shchelchnaya fosfataza testi",
+    "item_20": "AST va ALT testi"
+  },
+  "common": {
+    "loading": "Yuklanmoqda...",
+    "no_results": "Natijalar topilmadi"
   }
 }

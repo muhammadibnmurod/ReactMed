@@ -8,7 +8,7 @@
 import { inject } from 'vue'
 
 definePageMeta({
-    layout: 'price-list', // Layout nomi
+    layout: 'price-list', 
 })
 
 const search = inject('searchTerm')
