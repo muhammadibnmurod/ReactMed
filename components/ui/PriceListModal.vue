@@ -1,9 +1,9 @@
 <template>
     <n-modal :show="show" @update:show="handleClose" transform-origin="center">
-        <n-card class="w-[90vw] max-w-[2578px] rounded-[24px] md:rounded-[40px] bg-[#F0F7FF]" :bordered="false"
+        <n-card class="w-[80vw] max-w-[161.125rem] rounded-[1.5rem] md:rounded-[2.5rem] bg-[#F0F7FF]" :bordered="false"
             role="dialog" aria-modal="true" content-style="padding: 0;">
             <div v-if="service"
-                class="flex flex-col max-h-[85vh] overflow-hidden bg-[#E0EEFF ] rounded-[24px] md:rounded-[40px]">
+                class="flex flex-col max-h-[85vh] overflow-hidden bg-[#E0EEFF ] rounded-[1.5rem] md:rounded-[2.5rem]">
                 <div class="p-4 md:p-8 pb-0">
                     <BackPage mode="modal" @click="handleClose(false)" />
 
@@ -11,7 +11,7 @@
 
                 <div class="px-4 md:px-8 pt-4 md:pt-6">
                     <h2 class="text-[#222932] font-['Inter']
-                   text-[40px] md:text-[80px]
+                   text-[1rem] md:text-[5rem]
                    font-bold leading-normal">
                         {{ $t(service.title) }}
                     </h2>
@@ -26,8 +26,8 @@
                  overflow-y-auto">
                     <template v-if="filteredSubServices.length">
                         <div v-for="(sub, index) in filteredSubServices" :key="sub.id" class="flex items-stretch
-                     min-h-[64px] md:min-h-[150px]
-                     rounded-[20px] md:rounded-[px]
+                     min-h-[4rem] md:min-h-[9.375rem]
+                     rounded-[1.25rem] 
                      overflow-hidden
                      border border-[#A4CCFF]
                      bg-[#E8F2FF]
@@ -37,24 +37,24 @@
                        px-4 md:px-8
                        flex-1 py-3 md:py-4">
                                 <span class="text-[#145CB8] text-center font-['Inter']
-                         text-[32px] md:text-[40px]
+                         text-[2rem] md:text-[2.5rem]
                          font-semibold">
                                     {{ index + 1 }}
                                 </span>
 
                                 <span class="text-[#222932] font-['Inter']
-                         text-[26px] md:text-[32px]
+                         text-[1.625rem] md:text-[2rem]
                          font-semibold">
                                     {{ $t(sub.title) }}
                                 </span>
                             </div>
 
-                            <div class="flex w-[380px] md:w-[420px]
-                       py-[24px] pr-[40px] pl-[20px]
+                            <div class="flex w-[23.75rem] md:w-[26.25rem]
+                       py-[1.5rem] pr-[2.5rem] pl-[1.25rem]
                        justify-end items-center
                        bg-[#145CB8]">
                                 <span class="text-white text-right font-['Inter']
-                         text-[32px] md:text-[40px]
+                         text-[2rem] md:text-[2.5rem]
                          font-semibold">
                                     {{ sub.price.toLocaleString() }}
                                 </span>
@@ -63,7 +63,7 @@
                     </template>
 
                     <div v-else class="text-center py-20">
-                        <p class="text-[20px] md:text-[32px]
+                        <p class="text-[1.25rem] md:text-[2rem]
                      text-gray-400 italic font-medium">
                             {{ $t('common.no_results') }}
                         </p>
