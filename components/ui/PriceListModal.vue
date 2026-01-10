@@ -1,77 +1,87 @@
 <template>
-    <n-modal :show="show" @update:show="handleClose" transform-origin="center">
-        <n-card class="w-[80vw] max-w-[161.125rem] rounded-[1.5rem] md:rounded-[2.5rem] bg-[#F0F7FF]" :bordered="false"
-            role="dialog" aria-modal="true" content-style="padding: 0;">
-            <div v-if="service"
-                class="flex flex-col max-h-[85vh] overflow-hidden bg-[#E0EEFF ] rounded-[1.5rem] md:rounded-[2.5rem]">
-                <div class="p-4 md:p-8 pb-0">
-                    <BackPage mode="modal" @click="handleClose(false)" />
+  <n-modal :show="show" @update:show="handleClose" transform-origin="center">
+    <n-card class="w-[100vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] max-w-[1700px]
+                   rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]
+                   bg-[#F0F7FF]"
+            :bordered="false"
+            role="dialog"
+            aria-modal="true"
+            content-style="padding: 0;">
 
-                </div>
+      <div v-if="service"
+           class="flex flex-col max-h-[85vh] overflow-hidden bg-[#F0F7FF]
+                  rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]">
 
-                <div class="px-4 md:px-8 pt-4 md:pt-6">
-                    <h2 class="text-[#222932] font-['Inter']
-                   text-[1rem] md:text-[5rem]
-                   font-bold leading-normal">
-                        {{ $t(service.title) }}
-                    </h2>
-                </div>
+        <div class="p-3 sm:p-4 md:p-5 pb-0">
+          <BackPage mode="modal" @click="handleClose(false)" />
+        </div>
 
-                <div class="px-4 md:px-8 py-4 md:py-6">
-                    <PriceListFilter v-model="searchQuery" />
-                </div>
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8 pt-2 md:pt-3">
+          <h2 class="text-[#222932] font-['Inter']
+                   text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem]
+                   font-bold leading-tight">
+            {{ $t(service.title) }}
+          </h2>
+        </div>
 
-                <div class="px-4 md:px-8 pb-10
-                 flex flex-col gap-3 md:gap-4
-                 overflow-y-auto">
-                    <template v-if="filteredSubServices.length">
-                        <div v-for="(sub, index) in filteredSubServices" :key="sub.id" class="flex items-stretch
-                     min-h-[4rem] md:min-h-[9.375rem]
-                     rounded-[1.25rem] 
-                     overflow-hidden
-                     border border-[#A4CCFF]
-                     bg-[#E8F2FF]
-                     hover:border-[#145CB8]
-                     transition-all shadow-sm">
-                            <div class="flex items-center gap-3 md:gap-5
-                       px-4 md:px-8
-                       flex-1 py-3 md:py-4">
-                                <span class="text-[#145CB8] text-center font-['Inter']
-                         text-[2rem] md:text-[2.5rem]
-                         font-semibold">
-                                    {{ index + 1 }}
-                                </span>
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+          <PriceListFilter v-model="searchQuery" />
+        </div>
 
-                                <span class="text-[#222932] font-['Inter']
-                         text-[1.625rem] md:text-[2rem]
-                         font-semibold">
-                                    {{ $t(sub.title) }}
-                                </span>
-                            </div>
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-8
+                 flex flex-col gap-2 md:gap-2.5
+                 overflow-y-auto min-h-0 custom-scrollbar">
+          <template v-if="filteredSubServices.length">
+            <div v-for="(sub, index) in filteredSubServices"
+                 :key="sub.id"
+                 class="flex items-stretch
+                        min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]
+                        rounded-[0.75rem] sm:rounded-[0.875rem] md:rounded-[1rem]
+                        overflow-hidden
+                        border border-[#A4CCFF]
+                        bg-[#E8F2FF]
+                        hover:border-[#145CB8]
+                        transition-all shadow-sm">
 
-                            <div class="flex w-[23.75rem] md:w-[26.25rem]
-                       py-[1.5rem] pr-[2.5rem] pl-[1.25rem]
+              <div class="flex items-center gap-2 sm:gap-3 md:gap-3.5
+                       px-3 sm:px-4 md:px-5
+                       flex-1 py-1.5 sm:py-2 md:py-2.5">
+                <span class="text-[#145CB8] text-center font-['Inter']
+                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
+                         font-semibold min-w-[1.5rem] sm:min-w-[2rem]">
+                  {{ index + 1 }}
+                </span>
+
+                <span class="text-[#222932] font-['Inter']
+                         text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem]
+                         font-semibold leading-snug">
+                  {{ $t(sub.title) }}
+                </span>
+              </div>
+
+              <div class="flex w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[10rem]
+                       py-1.5 sm:py-2 md:py-2.5 px-3 sm:px-4
                        justify-end items-center
                        bg-[#145CB8]">
-                                <span class="text-white text-right font-['Inter']
-                         text-[2rem] md:text-[2.5rem]
+                <span class="text-white text-right font-['Inter']
+                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
                          font-semibold">
-                                    {{ sub.price.toLocaleString() }}
-                                </span>
-                            </div>
-                        </div>
-                    </template>
-
-                    <div v-else class="text-center py-20">
-                        <p class="text-[1.25rem] md:text-[2rem]
-                     text-gray-400 italic font-medium">
-                            {{ $t('common.no_results') }}
-                        </p>
-                    </div>
-                </div>
+                  {{ sub.price.toLocaleString() }}
+                </span>
+              </div>
             </div>
-        </n-card>
-    </n-modal>
+          </template>
+
+          <div v-else class="text-center py-6 sm:py-8 md:py-10">
+            <p class="text-[0.875rem] sm:text-[1rem] md:text-[1.125rem]
+                     text-gray-400 italic font-medium">
+              {{ $t('common.no_results') }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </n-card>
+  </n-modal>
 </template>
 
 <script setup lang="ts">
@@ -87,8 +97,8 @@ const { t } = useI18n()
 const { advancedSearch } = useAdvancedSearch()
 
 const props = defineProps<{
-    show: boolean
-    service: ServiceItem | null
+  show: boolean
+  service: ServiceItem | null
 }>()
 
 const emit = defineEmits(['update:show'])
@@ -96,37 +106,42 @@ const emit = defineEmits(['update:show'])
 const searchQuery = ref('')
 
 const handleClose = (val: boolean) => {
-    emit('update:show', val)
-    if (!val) searchQuery.value = ''
+  emit('update:show', val)
+  if (!val) searchQuery.value = ''
 }
 
 const filteredSubServices = computed(() => {
-    if (!props.service) return []
-    if (!searchQuery.value.trim()) return props.service.subServices
+  if (!props.service) return []
+  if (!searchQuery.value.trim()) return props.service.subServices
 
-    return props.service.subServices.filter(sub => {
-        const translatedTitle = t(sub.title)
-        return advancedSearch(searchQuery.value, translatedTitle)
-    })
+  return props.service.subServices.filter(sub => {
+    const translatedTitle = t(sub.title)
+    return advancedSearch(searchQuery.value, translatedTitle)
+  })
 })
 
-watch(() => props.show, val => {
-    if (val) searchQuery.value = ''
+watch(() => props.show, (val) => {
+  if (val) searchQuery.value = ''
 })
 </script>
 
 <style scoped>
-:deep(::-webkit-scrollbar) {
-    width: 10px;
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
 }
 
-:deep(::-webkit-scrollbar-track) {
-    background: transparent;
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-bottom: 20px;
 }
 
-:deep(::-webkit-scrollbar-thumb) {
-    background: #A4CCFF;
-    border-radius: 10px;
-    border: 3px solid #F0F7FF;
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #A4CCFF;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #145CB8;
 }
 </style>

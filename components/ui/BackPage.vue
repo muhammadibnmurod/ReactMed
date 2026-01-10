@@ -31,7 +31,7 @@ function handleClick() {
 
 <template>
     <button @click="handleClick"
-        class="inline-flex p-[0.625rem] xl:p-[1rem] 2xl:p-[1rem] max-w-[13rem] max-h-[120px] items-center gap-[1rem] rounded-[3.125rem] bg-[#CCE3FF]">
+        class="inline-flex p-[0.625rem] xl:p-[2rem] 2xl:p-[1.7rem] max-w-[19rem] max-h-[160px] items-center gap-[1rem] rounded-[3.125rem] bg-[#CCE3FF]">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 80 80" fill="none">
             <path d="M20 39.9862H60" stroke="#364960" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M40 60L20 40L40 20" stroke="#364960" stroke-width="6" stroke-linecap="round"
