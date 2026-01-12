@@ -17,7 +17,8 @@
       <img
         :src="Logo"
         alt="Logo"
-        class="w-16 h-16 header-image sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 2xl:w-36 2xl:h-36 object-contain flex-shrink-0"
+        class="w-16 h-16 header-image sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 2xl:w-36 2xl:h-36 object-contain flex-shrink-0 cursor-pointer"
+        @click="navigateToHome"
       />
 
       <!-- Title Text -->
@@ -32,6 +33,10 @@
 
 <script setup lang="ts">
 import Logo from "@/assets/icon/Vector.png";
+
+const navigateToHome = () => {
+  navigateTo('/');
+};
 </script>
 
 <style scoped>
