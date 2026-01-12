@@ -1,15 +1,15 @@
 <template>
-  <div class="w-full px-4 sm:px-8 md:px-10 lg:px-12 xl:px-14">
+  <div class="w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-24">
     <div class="text-center border w-full
-              rounded-t-[20px] sm:rounded-t-[30px] md:rounded-t-[40px] xl:rounded-t-[50px]
+              rounded-t-[2rem] sm:rounded-t-[3rem] md:rounded-t-[4rem] xl:rounded-t-[2rem]
               bg-[#C2DDFF]
               px-4 sm:px-6 md:px-10 xl:px-14
               py-2 mx-auto shadow-2xl cursor-pointer">
       <div class="items-center
-                min-h-[60px] sm:min-h-[80px] md:min-h-[120px] xl:min-h-[150px]
+                min-h-[6rem] sm:min-h-8rem] md:min-h-[2rem] xl:min-h-[9rem]
                 flex justify-center">
         <h2 class="text-[#145CB8] font-sans font-[700]
-                 text-[20px] sm:text-[28px] md:text-[40px] lg:text-[50px] xl:text-[56px]
+                 text-[2rem] sm:text-[28rem] md:text-[0.4rem] lg:text-[0.5rem] xl:text-[4rem]
                  leading-tight text-center px-2">
           {{ $t("PriceFilter.title") }}
         </h2>
@@ -17,15 +17,15 @@
     </div>
     <div>
       <div class="border
-                rounded-b-[20px] sm:rounded-b-[30px] md:rounded-b-[40px] xl:rounded-b-[50px]
+                rounded-b-[2rem] sm:rounded-b-[3rem] md:rounded-b-[4rem] xl:rounded-b-[2rem]
                 shadow-2xl h-auto bg-[#E0EEFF]
                 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40
-                py-[20px] sm:py-[25px] md:py-[35px] xl:py-[50px]
+                py-[2rem] sm:py-[25rem] md:py-[35rem] xl:py-[6rem]
                 items-center justify-center mx-auto mb-6 sm:mb-8 xl:mb-10 cursor-pointer">
         <n-input
           :placeholder="$t('PriceFilter.placeholder')"
           @update:value="emit('update:modelValue', $event)"
-          class="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white py-2 sm:py-4 md:py-6 xl:py-10"
+          class="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white py-2 sm:py-4 md:py-6 xl:py-8 text-[1.2rem] sm:text-[2rem] md:text-[2.5rem] xl:text-[1.8rem] w-full"
           size="large"
           :input-style="inputStyles">
           <template #prefix>
@@ -55,8 +55,8 @@ const emit = defineEmits<{
 // Responsive styles
 const inputStyles = computed(() => {
   return {
-    height: '60px',
-    fontSize: '16px'
+    height: '90px',
+    fontSize: '106px'
   }
 })
 

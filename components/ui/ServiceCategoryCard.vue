@@ -13,11 +13,11 @@ defineProps<{
                shadow-xl hover:shadow-2xl transition">
 
         <div class="flex items-center justify-center
-                    h-[180px] sm:h-[220px] md:h-[260px] xl:h-[300px]">
-            <component :is="item.icon" class="w-[140px] h-[170px]
-                       sm:w-[180px] sm:h-[210px]
-                       md:w-[210px] md:h-[250px]
-                       xl:w-[250px] xl:h-[300px]" />
+                    h-[8rem] sm:h-[2rem] md:h-[6rem] xl:h-[35rem]">
+            <component :is="item.icon" class="w-[4rem] h-[7rem]
+                       sm:w-[8rem] sm:h-[2rem]
+                       md:w-[21rem] md:h-[25rem]
+                       xl:w-[25rem] xl:h-[30rem]" />
         </div>
 
         <div class="bg-[#2F5FB3]
