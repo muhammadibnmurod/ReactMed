@@ -26,7 +26,7 @@ const flags: Record<string, { name: string; flag: string; code: "uz" | "uz-cyr" 
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
 
       <button @click="goAboutUs"
-        class="flex items-center gap-2 px-4 py-3 border-2 border-[#145CB8] rounded-xl bg-transparent lg:h-20 hover:bg-blue-50 transition-colors sm:px-6 sm:py-3 sm:gap-4 sm:rounded-2xl shrink-0">
+        class="flex items-center gap-2 px-4 py-3 border-2 border-[#145CB8] rounded-xl bg-transparent lg:h-28 hover:bg-blue-50 transition-colors sm:px-6 sm:py-3 sm:gap-4 sm:rounded-2xl shrink-0">
         <Info class="w-5 h-5 text-[#145CB8] sm:w-6 sm:h-6 lg:w-10 lg:h-10 md:w-8 md:h-8" />
         <span class="text-[3rem] font-medium text-[#145CB8] sm:text-xl md:text-2xl lg:text-4xl">
           {{ $t('aboutus') }}

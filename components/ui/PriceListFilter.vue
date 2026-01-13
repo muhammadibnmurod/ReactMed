@@ -6,10 +6,10 @@
               px-4 sm:px-6 md:px-10 xl:px-14
               py-2 mx-auto shadow-2xl cursor-pointer">
       <div class="items-center
-                min-h-[6rem] sm:min-h-8rem] md:min-h-[2rem] xl:min-h-[9rem]
+                min-h-[6rem] sm:min-h-8rem] md:min-h-[2rem] xl:min-h-[7rem]
                 flex justify-center">
         <h2 class="text-[#145CB8] font-sans font-[700]
-                 text-[2rem] sm:text-[28rem] md:text-[0.4rem] lg:text-[0.5rem] xl:text-[4rem]
+                 text-[2rem] sm:text-[28rem] md:text-[0.4rem] lg:text-[0.5rem] xl:text-[3rem]
                  leading-tight text-center px-2">
           {{ $t("PriceFilter.title") }}
         </h2>
@@ -20,7 +20,7 @@
                 rounded-b-[2rem] sm:rounded-b-[3rem] md:rounded-b-[4rem] xl:rounded-b-[2rem]
                 shadow-2xl h-auto bg-[#E0EEFF]
                 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40
-                py-[2rem] sm:py-[25rem] md:py-[35rem] xl:py-[6rem]
+                py-[2rem] sm:py-[25rem] md:py-[35rem] xl:py-[3rem]
                 items-center justify-center mx-auto mb-6 sm:mb-8 xl:mb-10 cursor-pointer">
         <n-input
           :placeholder="$t('PriceFilter.placeholder')"

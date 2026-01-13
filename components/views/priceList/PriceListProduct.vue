@@ -25,8 +25,8 @@ const filteredCategories = computed(() => {
   <div class="grid 
            grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
            w-full 
-           px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14 
-           gap-3 sm:gap-4 md:gap-5 xl:gap-6 
+           px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14  
+           gap-3 sm:gap-4 md:gap-5 xl:gap-6
            bg-[#EBF4FF]">
     <ServiceCategoryCard v-for="item in filteredCategories" :key="item.id" :item="item" />
   </div>

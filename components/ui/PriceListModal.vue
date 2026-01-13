@@ -1,80 +1,115 @@
 <template>
-  <n-modal :show="show" @update:show="handleClose" transform-origin="center">
-    <n-card class="w-[100vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] max-w-[1700px]
-                   rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]
-                   bg-[#F0F7FF]"
-            :bordered="false"
-            role="dialog"
-            aria-modal="true"
-            content-style="padding: 0;">
-
-      <div v-if="service"
-           class="flex flex-col max-h-[85vh] overflow-hidden bg-[#F0F7FF]
-                  rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]">
-
-        <div class="p-3 sm:p-4 md:p-5 pb-0">
+  <n-modal
+      :show="show"
+      @update:show="handleClose"
+      transform-origin="center"
+  >
+    <n-card
+        class="w-[100vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] max-w-[2400px]
+             bg-[#F0F7FF]
+             rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]"
+        :bordered="false"
+        role="dialog"
+        aria-modal="true"
+        content-style="padding: 0;"
+    >
+      <!-- ✅ BUTUN MODAL SCROLL -->
+      <div
+          v-if="service"
+          class="flex flex-col
+               max-h-[85vh]
+               overflow-y-auto
+               bg-[#F0F7FF]
+               rounded-[1rem] sm:rounded-[1.25rem] md:rounded-[1.5rem]
+               custom-scrollbar"
+      >
+        <!-- Back button -->
+        <div class="p-3 sm:p-4 md:p-5">
           <BackPage mode="modal" @click="handleClose(false)" />
         </div>
 
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8 pt-2 md:pt-3">
-          <h2 class="text-[#222932] font-['Inter']
+        <!-- Title -->
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8 pt-1">
+          <h2
+              class="text-[#222932] font-['Inter']
                    text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem]
-                   font-bold leading-tight">
+                   font-bold leading-tight"
+          >
             {{ $t(service.title) }}
           </h2>
         </div>
 
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4">
+        <!-- Filter -->
+        <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-3">
           <PriceListFilter v-model="searchQuery" />
         </div>
 
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-8
-                 flex flex-col gap-2 md:gap-2.5
-                 overflow-y-auto min-h-0 custom-scrollbar">
+        <!-- List -->
+        <div
+            class="px-3 sm:px-4 md:px-6 lg:px-8
+                 pb-6 sm:pb-8 md:pb-10
+                 flex flex-col gap-2 md:gap-2.5"
+        >
           <template v-if="filteredSubServices.length">
-            <div v-for="(sub, index) in filteredSubServices"
-                 :key="sub.id"
-                 class="flex items-stretch
-                        min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]
-                        rounded-[0.75rem] sm:rounded-[0.875rem] md:rounded-[1rem]
-                        overflow-hidden
-                        border border-[#A4CCFF]
-                        bg-[#E8F2FF]
-                        hover:border-[#145CB8]
-                        transition-all shadow-sm">
-
-              <div class="flex items-center gap-2 sm:gap-3 md:gap-3.5
+            <div
+                v-for="(sub, index) in filteredSubServices"
+                :key="sub.id"
+                class="flex items-stretch
+                     min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]
+                     rounded-[0.75rem] sm:rounded-[0.875rem] md:rounded-[1rem]
+                     overflow-hidden
+                     border border-[#A4CCFF]
+                     bg-[#E8F2FF]
+                     hover:border-[#145CB8]
+                     transition-all shadow-sm"
+            >
+              <!-- Left -->
+              <div
+                  class="flex items-center gap-2 sm:gap-3 md:gap-3.5
                        px-3 sm:px-4 md:px-5
-                       flex-1 py-1.5 sm:py-2 md:py-2.5">
-                <span class="text-[#145CB8] text-center font-['Inter']
+                       flex-1 py-1.5 sm:py-2 md:py-2.5"
+              >
+                <span
+                    class="text-[#145CB8] text-center font-['Inter']
                          text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
-                         font-semibold min-w-[1.5rem] sm:min-w-[2rem]">
+                         font-semibold min-w-[1.5rem] sm:min-w-[2rem]"
+                >
                   {{ index + 1 }}
                 </span>
 
-                <span class="text-[#222932] font-['Inter']
+                <span
+                    class="text-[#222932] font-['Inter']
                          text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem]
-                         font-semibold leading-snug">
+                         font-semibold leading-snug"
+                >
                   {{ $t(sub.title) }}
                 </span>
               </div>
 
-              <div class="flex w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[10rem]
+              <!-- Price -->
+              <div
+                  class="flex w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[10rem]
                        py-1.5 sm:py-2 md:py-2.5 px-3 sm:px-4
                        justify-end items-center
-                       bg-[#145CB8]">
-                <span class="text-white text-right font-['Inter']
+                       bg-[#145CB8]"
+              >
+                <span
+                    class="text-white text-right font-['Inter']
                          text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
-                         font-semibold">
+                         font-semibold"
+                >
                   {{ sub.price.toLocaleString() }}
                 </span>
               </div>
             </div>
           </template>
 
-          <div v-else class="text-center py-6 sm:py-8 md:py-10">
-            <p class="text-[0.875rem] sm:text-[1rem] md:text-[1.125rem]
-                     text-gray-400 italic font-medium">
+          <!-- Empty -->
+          <div v-else class="text-center py-8">
+            <p
+                class="text-[0.875rem] sm:text-[1rem] md:text-[1.125rem]
+                     text-gray-400 italic font-medium"
+            >
               {{ $t('common.no_results') }}
             </p>
           </div>
@@ -101,7 +136,9 @@ const props = defineProps<{
   service: ServiceItem | null
 }>()
 
-const emit = defineEmits(['update:show'])
+const emit = defineEmits<{
+  (e: 'update:show', value: boolean): void
+}>()
 
 const searchQuery = ref('')
 
@@ -115,33 +152,33 @@ const filteredSubServices = computed(() => {
   if (!searchQuery.value.trim()) return props.service.subServices
 
   return props.service.subServices.filter(sub => {
-    const translatedTitle = t(sub.title)
-    return advancedSearch(searchQuery.value, translatedTitle)
+    return advancedSearch(searchQuery.value, t(sub.title))
   })
 })
 
-watch(() => props.show, (val) => {
-  if (val) searchQuery.value = ''
-})
+watch(
+    () => props.show,
+    (val) => {
+      if (val) searchQuery.value = ''
+    }
+)
 </script>
 
 <style scoped>
-/* Scrollbar styling */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
-  margin-bottom: 20px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #A4CCFF;
+  background: #a4ccff;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #145CB8;
+  background: #145cb8;
 }
 </style>
