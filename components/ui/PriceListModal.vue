@@ -24,7 +24,7 @@
                custom-scrollbar"
       >
         <!-- Back button -->
-        <div class="p-3 sm:p-4 md:p-5">
+        <div class="sm:p-4 md:p-5">
           <BackPage mode="modal" @click="handleClose(false)" />
         </div>
 
@@ -40,7 +40,7 @@
         </div>
 
         <!-- Filter -->
-        <div class="px-3 sm:px-4 md:px-6 lg:px-8 py-3">
+        <div class="px-2 sm:px-4 md:px-6 lg:px-8 py-4">
           <PriceListFilter v-model="searchQuery" />
         </div>
 
@@ -55,7 +55,7 @@
                 v-for="(sub, index) in filteredSubServices"
                 :key="sub.id"
                 class="flex items-stretch
-                     min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem]
+                     min-h-[3rem] sm:min-h-[6rem] md:min-h-[5rem] lg:min-h-[8rem]
                      rounded-[0.75rem] sm:rounded-[0.875rem] md:rounded-[1rem]
                      overflow-hidden
                      border border-[#A4CCFF]
@@ -71,15 +71,15 @@
               >
                 <span
                     class="text-[#145CB8] text-center font-['Inter']
-                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
-                         font-semibold min-w-[1.5rem] sm:min-w-[2rem]"
+                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[2.6rem]
+                         font-semibold min-w-[2rem] lg:px-6 sm:min-w-[2rem]"
                 >
                   {{ index + 1 }}
                 </span>
 
                 <span
                     class="text-[#222932] font-['Inter']
-                         text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.125rem]
+                         text-[0.875rem] sm:text-[0.9375rem] md:text-[1rem] lg:text-[1.8rem]
                          font-semibold leading-snug"
                 >
                   {{ $t(sub.title) }}
@@ -88,14 +88,14 @@
 
               <!-- Price -->
               <div
-                  class="flex w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[10rem]
+                  class="flex w-[7rem] sm:w-[8rem] md:w-[9rem] lg:w-[15rem]
                        py-1.5 sm:py-2 md:py-2.5 px-3 sm:px-4
-                       justify-end items-center
+                       justify-center items-center
                        bg-[#145CB8]"
               >
                 <span
                     class="text-white text-right font-['Inter']
-                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem]
+                         text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[2rem]
                          font-semibold"
                 >
                   {{ sub.price.toLocaleString() }}
