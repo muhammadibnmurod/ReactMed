@@ -5,18 +5,18 @@ import ServiceCategoryCard from "~/components/ui/ServiceCategoryCard.vue";
 import { useAdvancedSearch } from "~/composable/useSearch";
 
 const props = defineProps<{
-  search: string;
+  search?: string;
 }>();
 
 const { t: $t } = useI18n();
 const { advancedSearch } = useAdvancedSearch();
 
 const filteredCategories = computed(() => {
-  if (!props.search.trim()) return serviceCategories;
+  if (!props.search?.trim()) return serviceCategories;
 
   return serviceCategories.filter((item) => {
     const translatedTitle = $t(item.title);
-    return advancedSearch(props.search, translatedTitle);
+    return advancedSearch(props.search!, translatedTitle);
   });
 });
 </script>

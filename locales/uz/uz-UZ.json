@@ -6,7 +6,9 @@
     "objects": "Obyektlar"
   },
   "priceList": {
-    "title": "Naxrlar ro'yxati"
+    "title": "Naxrlar ro'yxati",
+    "description-1": "\"Ўзбекистон темир йўллари \" АЖ нинг 25 июнь 2019 йилдаги 822-Н сонли буйруқни 1-иловасига асосан \"Даволаш-профилактик муассасаларида пуллик тиббий хизмат кўрсатиш тарифларини шакллантириш \" ",
+    "description-2": "2025-yil 01-martdan boshlab amalda."
   },
   "header": {
     "title": "O‘zbekiston temir yo‘llari AJ Markaziy poliklinikasining pullik tibbiy xizmatlari narxlari ro‘yxati"

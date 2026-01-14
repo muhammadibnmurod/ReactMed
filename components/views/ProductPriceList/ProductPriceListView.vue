@@ -4,95 +4,123 @@ import {
   serviceCategories,
   type ServiceItem,
 } from "~/components/views/priceList/Data";
-import PriceListModal from "~/components/ui/PriceListModal.vue";
 import { useAdvancedSearch } from "~/composable/useSearch";
 
 const props = defineProps<{
-  search: string;
+  search?: string;
 }>();
 
-const { t: $t } = useI18n();
+const { t } = useI18n();
 const { advancedSearch } = useAdvancedSearch();
 
-// Barcha kategoriyalardagi barcha xizmatlarni bitta massivga yig'amiz
-const allServices = computed(() => {
-  return serviceCategories.flatMap((cat) => cat.services);
-});
+/* === ALL SERVICES === */
+const allServices = computed(() =>
+  serviceCategories.flatMap((cat) => cat.services)
+);
 
-// Qidiruv bo'yicha filtrlash
+/* === SEARCH === */
 const filteredServices = computed(() => {
-  if (!props.search.trim()) {
-    return allServices.value;
-  }
-  return allServices.value.filter((service) => {
-    const translatedTitle = $t(service.title);
-    return advancedSearch(props.search, translatedTitle);
-  });
+  if (!props.search?.trim()) return allServices.value;
+
+  return allServices.value.filter((service) =>
+    advancedSearch(props.search!, t(service.title))
+  );
 });
 
-const showModal = ref(false);
-const selectedService = ref<ServiceItem | null>(null);
+/* === ACCORDION STATE === */
+const openedId = ref<number | null>(null);
 
-function openServiceDetails(service: ServiceItem) {
-  selectedService.value = service;
-  showModal.value = true;
-}
+const toggle = (service: ServiceItem) => {
+  openedId.value = openedId.value === service.id ? null : service.id;
+};
 </script>
 
 <template>
-  <div class="flex w-full flex-col px-14 gap-[20px] py-10">
-    <h1 class="text-[#145CB8] font-bold mb-10 text-[48px]">
-      {{ $t("Xizmatlar narxlari") }}
-    </h1>
-
-    <template v-if="filteredServices.length > 0">
-      <div
-        v-for="(service, index) in filteredServices"
-        :key="service.id"
-        @click="openServiceDetails(service)"
-        class="flex items-center cursor-pointer self-stretch rounded-[60px] border border-[#A4CCFF] bg-[#E0EEFF] shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all"
+  <div class="w-full px-6 sm:px-10 md:px-14 py-10 space-y-4">
+    <div
+      v-for="(service, index) in filteredServices"
+      :key="service.id"
+      class="rounded-[1.25rem] sm:rounded-[1.75rem] border border-[#A4CCFF] bg-[#E8F2FF] overflow-hidden"
+    >
+      <button
+        @click="toggle(service)"
+        class="w-full flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5 lg:py-10 bg-[#E8F2FF] hover:bg-[#DDEBFF] transition"
       >
-        <div class="flex items-center">
-          <div
-            class="flex py-[48px] px-[60px] rounded-l-[60px] justify-center items-center bg-[#C2DDFF]"
+        <div class="flex items-center gap-10">
+          <span
+            class="flex items-center justify-center min-w-[6rem] h-[4.5rem] rounded-[1rem] bg-[#145CB8] text-white font-['Inter'] text-[3.1rem] font-semibold leading-normal"
           >
-            <p
-              class="flex w-[120px] h-[80px] justify-center items-center rounded-[20px] bg-[#145CB8] text-white font-bold text-[46px]"
+            {{ index + 1 }}
+          </span>
+
+          <span
+            class="text-[#145CB8] font-['Inter'] text-[3rem] font-semibold leading-normal"
+          >
+            {{ t(service.title) }}
+          </span>
+        </div>
+
+        <svg
+          class="w-8 h-8 transition-transform duration-300 text-[#145CB8]"
+          :class="openedId === service.id ? 'rotate-180' : ''"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M6 9L12 15L18 9"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <transition
+        enter-active-class="transition-all duration-300 ease-in-out"
+        leave-active-class="transition-all duration-200 ease-in-out"
+        enter-from-class="max-h-0 opacity-0"
+        enter-to-class="max-h-[1000px] opacity-100"
+        leave-from-class="max-h-[1000px] opacity-100"
+        leave-to-class="max-h-0 opacity-0"
+      >
+        <div
+          v-if="openedId === service.id"
+          class="px-5 sm:px-6 py-4 bg-[#F0F7FF] space-y-2"
+        >
+          <div
+            v-for="(sub, i) in service.subServices"
+            :key="sub.id"
+            class="flex items-stretch rounded-[2rem] overflow-hidden border border-[#A4CCFF] bg-[#E8F2FF]"
+          >
+            <div class="flex items-center gap-10 flex-1 px-10 py-5">
+              <span class="text-[#145CB8] font-semibold text-[2.5rem]">
+                {{ i + 1 }}
+              </span>
+
+              <span class="text-[#222932] lg:text-[2.8rem] sm:text-[1rem]">
+                {{ t(sub.title) }}
+              </span>
+            </div>
+
+            <div
+              class="flex w-[32.375rem] pt-[3rem] pr-[3rem] pb-[3rem] pl-[1.25rem] justify-center items-center gap-[20px] self-stretch bg-[#145CB8]"
             >
-              {{ index + 1 }}
-            </p>
+              <span
+                class="text-white text-right font-['Inter'] text-[2.5rem] font-semibold leading-normal"
+              >
+                {{ sub.price.toLocaleString() }}
+              </span>
+            </div>
           </div>
         </div>
+      </transition>
+    </div>
 
-        <div class="w-full flex items-center justify-between px-14">
-          <span class="text-[#145CB8] font-semibold text-[40px]">
-            {{ $t(service.title) }}
-          </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="48"
-            viewBox="0 0 28 48"
-            fill="none"
-          >
-            <path
-              d="M4 4L24 24L4 44"
-              stroke="#145CB8"
-              stroke-width="6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-    </template>
-
-    <template v-else>
-      <div class="w-full text-center py-20">
-        <p class="text-gray-400 text-[32px]">Natija topilmadi</p>
-      </div>
-    </template>
+    <div v-if="!filteredServices.length" class="py-16 text-center">
+      <p class="text-gray-400 text-lg">
+        {{ t("common.no_results") }}
+      </p>
+    </div>
   </div>
-
-  <PriceListModal v-model:show="showModal" :service="selectedService" />
 </template>

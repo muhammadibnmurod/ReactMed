@@ -6,7 +6,9 @@
     "objects": "Objects"
   },
   "priceList": {
-    "title": "Price List"
+    "title": "Price List",
+    "description-1": "Based on Appendix 1 of Order No. 822-N of JSC \"Uzbekistan Railways\" dated June 25, 2019, \"Formation of tariffs for paid medical services in treatment and preventive institutions\" ",
+    "description-2": "Effective from March 01, 2025."
   },
   "header": {
     "title": "List of prices for paid medical services of the Central Polyclinic of JSC \"Uzbekistan Railways\""
