@@ -32,7 +32,7 @@
         <div class="px-3 sm:px-4 md:px-6 lg:px-8 pt-1">
           <h2
               class="text-[#222932] font-['Inter']
-                   text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem]
+                   text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[3rem] lg:p-5
                    font-bold leading-tight"
           >
             {{ $t(service.title) }}
