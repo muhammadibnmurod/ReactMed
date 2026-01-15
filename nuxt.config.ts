@@ -50,7 +50,7 @@ export default defineNuxtConfig({
 
   svgo: {
     componentPrefix: "icon",
-    autoImportPath: "./assets/icons/",
+    autoImportPath: "./assets/icon/",
     defaultImport: "component",
     svgoConfig: {
       multipass: false, // Отключаем многоходовую оптимизацию
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
         { name: "theme-color", content: "#ffffff" },
         { name: "description", content: "NBT - Next Big Thing" },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "favicon.ico" }],
     },
   },
 
